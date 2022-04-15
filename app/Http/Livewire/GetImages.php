@@ -17,6 +17,7 @@ class GetImages extends Component
 
     public function refreshed (){
         $this->render();
+        $this->emit('updateCount');
     }
 
     public function ImgType($cat){

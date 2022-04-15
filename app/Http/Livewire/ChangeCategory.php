@@ -34,7 +34,7 @@ class ChangeCategory extends Component
     Storage::move($this->oldPath, $this->newPath);
 
     $this->emitUp('ImgType', $this->oldstuff);
-
+    $this->emit('updateCount');
     }
 
 
