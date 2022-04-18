@@ -22,7 +22,41 @@
 </div>
 <div class="row-span-full col-start-2 grid place-content-evenly sm:pl-4">
 <div class="md:col-start-2">
+<!-- livewrie input test -->
+<div
+
+    x-data="{ isUploading: false, progress: 0 }"
+
+    x-on:livewire-upload-start="isUploading = true"
+
+    x-on:livewire-upload-finish="isUploading = false"
+
+    x-on:livewire-upload-error="isUploading = false"
+
+    x-on:livewire-upload-progress="progress = $event.detail.progress"
+
+>
+
+    <!-- File Input -->
+
 <input class="text-gray-50 bg-blueline rounded pr-2 font-light text-sm" type="file" wire:model="photo"/>
+
+
+    <!-- Progress Bar -->
+
+    <div x-show="isUploading">
+
+        <progress max="100" x-bind:value="progress"></progress>
+
+    </div>
+
+</div>
+
+
+
+
+
+
 </div>
 <div class="  md:col-start-3">
 <select wire:model="photocategory" class="text-blueline font-light w-60">
