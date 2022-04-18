@@ -8,9 +8,9 @@
             <form wire:submit.prevent="save">
                 @csrf
 
-                <div class="grid grid-cols-3 gap-4 items-center mb-4">
+                <div class="grid grid-cols-3 gap-4 items-center mb-4"
 
-                <div
+
 
                     x-data="{ isUploading: false, progress: 0 }"
 
@@ -21,8 +21,8 @@
                     x-on:livewire-upload-error="isUploading = false"
 
                     x-on:livewire-upload-progress="progress = $event.detail.progress"
+                    >
 
-                >
                 <div class="col-start-1">
 
 
@@ -47,7 +47,6 @@
 
                 <div class="col-start-3">
                         <button x-bind:disabled="isUploading" type="submit" class="font-light text-sm  hover:border-2 shadow focus:bg-blue-500 active:bg-blue-500 rounded p-2 text-blueline">Save Photo</button>
-                </div>
                 </div>
                 <div class="col-span-full place-self-center">
                 <div wire:loading wire:target="photos" class="text-sm italic text-gray-500">Uploading...</div>
