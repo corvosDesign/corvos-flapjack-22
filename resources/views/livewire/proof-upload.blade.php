@@ -46,7 +46,7 @@
 
 
                 <div class="col-start-3">
-                        <button x-bind:disabled="isUploading" type="submit" class="font-light text-sm  hover:border-2 shadow focus:bg-blue-500 active:bg-blue-500 rounded p-2 text-blueline">Save Photo</button>
+                        <button x-bind:disabled="isUploading" type="submit" class="font-light text-sm  hover:border-2 shadow focus:bg-blue-500 active:bg-blue-500 rounded p-2 text-blueline disabled:text-site-white disabled:bg-site-gray">Save Photo</button>
                 </div>
                 <div class="col-span-full place-self-center">
                 <div wire:loading wire:target="photos" class="text-sm italic text-gray-500">Uploading...</div>
