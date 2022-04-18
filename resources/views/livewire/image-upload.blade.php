@@ -21,19 +21,17 @@
 
 </div>
 <!-- livewire alpine on load start-->
-<div
-x-data="{ isUploading: false, progress: 0 }"
+    <div class="row-span-full col-start-2 grid place-content-evenly sm:pl-4"
+        x-data="{ isUploading: false, progress: 0 }"
 
-x-on:livewire-upload-start="isUploading = true"
+        x-on:livewire-upload-start="isUploading = true"
 
-x-on:livewire-upload-finish="isUploading = false"
+        x-on:livewire-upload-finish="isUploading = false"
 
-x-on:livewire-upload-error="isUploading = false"
+        x-on:livewire-upload-error="isUploading = false"
 
-x-on:livewire-upload-progress="progress = $event.detail.progress"
-
->
-    <div class="row-span-full col-start-2 grid place-content-evenly sm:pl-4">
+        x-on:livewire-upload-progress="progress = $event.detail.progress"
+    >
     <div class="md:col-start-2">
     <input class="text-gray-50 bg-blueline rounded pr-2 font-light text-sm" type="file" wire:model="photo"/>
     <div x-show="isUploading">
@@ -58,7 +56,6 @@ x-on:livewire-upload-progress="progress = $event.detail.progress"
     <div class="md:col-start-4">
  <button x-bind:disabled="isUploading" type="submit" class="font-light text-sm  hover:border-2 shadow focus:bg-blue-500 active:bg-blue-500 rounded p-2 text-blueline disabled:text-site-white disabled:bg-site-gray">Save Photo</button>    </div>
     </div>
-</div>
 </div>
 </div>
 </form>
