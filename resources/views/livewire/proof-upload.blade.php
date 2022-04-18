@@ -46,7 +46,16 @@
 
                 </div>
                 <div class="col-start-3">
-                <button type="submit" class="font-light text-sm  hover:border-2 shadow focus:bg-blue-500 active:bg-blue-500 rounded p-2 text-blueline">Save Photo</button>
+                <div x-data="{imagesUploading: false}"
+                    x-on:livewire-upload-start = 'imageUploading = true'
+                    x-on:livewire-upload-finish = 'imageUploading = false'
+                >
+
+                <button x-bind:disabled="imagesUploading" type="submit" class="font-light text-sm  hover:border-2 shadow focus:bg-blue-500 active:bg-blue-500 rounded p-2 text-blueline">Save Photo</button>
+
+
+                </div>
+
                 </div>
                 <div class="col-span-full place-self-center">
                 <div wire:loading wire:target="photos" class="text-sm italic text-gray-500">Uploading...</div>
