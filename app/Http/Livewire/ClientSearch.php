@@ -16,7 +16,7 @@ class ClientSearch extends Component
     public $companyVisible = true;
     public $showUser = false;
 
-protected $listeners = ['companyAdded','projectAdded'];
+protected $listeners = ['companyAdded','projectAdded', "closeandReset"];
 
     public function companyAdded($id){
         $this->companies = Client::all();
