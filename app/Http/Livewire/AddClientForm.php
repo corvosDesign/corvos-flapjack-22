@@ -35,7 +35,10 @@ class AddClientForm extends Component
            Storage::makeDirectory("proofs/".$this->newCompany->name);
            $this->emitUp('companyAdded', $this->newCompany->id);
        }
-
+       public function closeandReset(){
+           $this->reset();
+           $this->emitUp('closeandReset');
+       }
 
 
     public function render()

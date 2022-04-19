@@ -1,10 +1,10 @@
 
 <x-app-layout>
 <x-slot name="header">
-    <h2 class=" text-xl text-site-black font-normal leading-tight">
+   <a href=""{{route('project.create')}}" <h2 class=" text-xl text-site-black font-normal leading-tight">
         {{ __('new project') }}
     </h2>
-
+    </a>
 </x-slot>
 
 <div class="py-12">

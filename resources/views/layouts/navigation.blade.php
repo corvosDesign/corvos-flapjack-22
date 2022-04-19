@@ -18,19 +18,24 @@
                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                            {{ __('dashboard') }}
                        </x-nav-link>
-                       <x-nav-link :href="route('list')" :active="request()->routeIs('list')">
-                       {{ __('still gallery list') }}
-                       </x-nav-link>
-                       <x-nav-link :href="route('addimage')" :active="request()->routeIs('addimage')">
-                       {{ __('add image') }}
-                       </x-nav-link>
                        <x-nav-link :href="route('project.create')" :active="request()->routeIs('project/create')">
                        {{ __('new project') }}
                        </x-nav-link>
                        <x-nav-link :href="route('manage')" :active="request()->routeIs('project/manage')">
                        {{ __('manage') }}
                        </x-nav-link>
-                       <x-nav-link :href="route('corvos')" :active="request()->routeIs('/')">
+                       <x-nav-link :href="route('list')" :active="request()->routeIs('list')">
+                         {{ __('gallery') }}
+                         </x-nav-link>
+                         <x-nav-link :href="route('addimage')" :active="request()->routeIs('addimage')">
+                         {{ __('add image') }}                         <x-nav-link :href="route('list')" :active="request()->routeIs('list')">
+                          {{ __('gallery') }}
+                          </x-nav-link>
+                          <x-nav-link :href="route('addimage')" :active="request()->routeIs('addimage')">
+                          {{ __('add image') }}
+                          </x-nav-link>
+                          <span class="inline-flex items-center px-1 pt-1 text-sm  leading-5 font-bold text-site-black">|</span>
+                          <x-nav-link :href="route('corvos')" :active="request()->routeIs('/')">
                           {{ __('home') }}
                           </x-nav-link>
 

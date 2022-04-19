@@ -26,8 +26,11 @@
     @error('ext') <span class="error">{{ $message }}</span> @enderror
 
     </div>
-    <div class="col-span-full">
-    <button class="font-extralight text-blueline shadow-md p-2 mt-3 text-text-sm rounded border border-gray-100" type="submit">add client</button>
+    <div class="col-start-1">
+    <button class=" text-blueline shadow-md border border-site-gray font-light p-1 rounded w-28" type="submit">add client</button>
+    </div>
+    <div class="col-start-2">
+    <x-close-reset-button></x-close-reset-button>
     </div>
 </form>
 </div>

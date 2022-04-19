@@ -34,6 +34,8 @@
     >
     <div class="md:col-start-2">
     <input class="text-gray-50 bg-blueline rounded pr-2 font-light text-sm" type="file" wire:model="photo"/>
+    <p class="text-blueline font-smaller">10M max</p>
+
     <div x-show="isUploading">
 
         <progress max="100" x-bind:value="progress"></progress>

@@ -29,8 +29,9 @@
 
                     <!-- File Input -->
 
-                       <input type="file" wire:model="photos" multiple class="text-gray-50 bg-blueline rounded p-2 font-light text-sm">
+                       <input type="file" wire:model="photos" multiple class="text-gray-50 bg-blueline rounded p-2 font-light text-sm"/>
 
+                       <p class="text-blueline font-smaller">10M max</p>
 
                     <!-- Progress Bar -->
 

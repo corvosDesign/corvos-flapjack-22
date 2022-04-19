@@ -32,6 +32,11 @@ class AddProjectForm extends Component
          return $this->newProject;
 
     }
+    public function closeandReset(){
+        $this->reset();
+        $this->emit('closeandReset');
+    }
+
     public function mount(){
       $this->projectOpenDate = now()->toDateString();
     }

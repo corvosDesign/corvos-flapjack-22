@@ -30,10 +30,14 @@ protected $listeners = ['companyAdded','projectAdded'];
 
    public function mount(){
         $this->companies = Client::all();
-
+   }
+ public function closeandReset(){
+       $this->companies = Client::all();
+       $this->companyVisible = true;
+       $this->company_id = 0;
+       $this->reset("company");
 
    }
-
 
    public function updated(){
      $this->company = Client::find($this->company_id);

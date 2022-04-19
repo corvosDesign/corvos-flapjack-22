@@ -9,10 +9,10 @@
            </div>
 
             <div class="col-start-2">
-               <button class="font-extralight text-blueline shadow-md p-2 mt-3 text-text-sm rounded border border-gray-100" wire:click="$set('newUser', true)">new project contact</button>
+               <button class="text-blueline shadow-md border border-site-gray font-light p-1 rounded w-28" wire:click="$set('newUser', true)">new contact</button>
             </div>
             <div class="col-start-3">
-               <a href="/dashboard"><button class="font-extralight text-blueline shadow-md p-2 mt-3 text-text-sm rounded border border-gray-100">finish</button>   </a>
+               <a href="/dashboard"><button class="text-blueline shadow-md border border-site-gray font-light p-1 rounded w-28">finish</button>   </a>
                 </div>
 
         </div>
