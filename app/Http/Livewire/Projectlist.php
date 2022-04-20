@@ -26,7 +26,7 @@ class Projectlist extends Component
 
 public function allProjects (){
     $this->projects = Project::all()->sortByDesc('project_start');
-    $this->projectorClient = true;
+    $this->projectOrClient = true;
 }
 
 public function currentProjects(){
