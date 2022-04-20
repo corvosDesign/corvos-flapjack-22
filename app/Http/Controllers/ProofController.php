@@ -56,7 +56,7 @@ class ProofController extends Controller
         $nextProof = Proof::where('project_id', $proof_detail->project_id);
         $next = $nextProof->firstWhere('id', '>', $proof_detail->id);
 
-        $prevProof = Proof::where('project_id', $proof_detail->project_id);
+        $prevProof = Proof::where('project_id', $proof_detail->project_id)->orderBy('id', 'desc');
         $previous =$prevProof->firstWhere('id', '<', $proof_detail->id);
 
         return view('projects.proof_detail', ['proof'=>$proof_detail, 'path'=>$path, 'next'=>$next, 'previous'=>$previous]);
