@@ -52,7 +52,14 @@ class ProofController extends Controller
         $company = $proof_detail->projects->client;
         $path = "proofs/".$company->name."/".$proof_detail->projects->project_title."/";
 
-        return view('projects.proof_detail', ['proof'=>$proof_detail, 'path'=>$path]);
+
+        $nextProof = Proof::where('project_id', $proof_detail->project_id);
+        $next = $nextProof->firstWhere('id', '>', $proof_detail->id);
+
+        $prevProof = Proof::where('project_id', $proof_detail->project_id);
+        $previous =$prevProof->firstWhere('id', '<', $proof_detail->id);
+
+        return view('projects.proof_detail', ['proof'=>$proof_detail, 'path'=>$path, 'next'=>$next, 'previous'=>$previous]);
 
     }
 
