@@ -11,19 +11,27 @@
 <h3 wire:click="allProjects" class="text-site-white cursor-pointer hover:text-gray-600">all projects</h3>
 </div>
 <div class="grid rounded bg-site-black p-2  hover:shadow">
-<h3 class="text-site-white cursor-pointer hover:text-gray-600">client list</h3>
-</div>
+<h3 wire:click="clients" class="text-site-white cursor-pointer hover:text-gray-600">clients</h3>
 </div>
 
-<div class="grid grids-col-4 place-content-evenly text-blueline ">
-  @foreach($projects as $project)
-  <div class="col-start-1"><a href="{{route('project.show',['project'=> $project->id ] )}}" >{{$project->project_title}}</a></div>
-  <div class="col-start-2">{{$project->project_start}}</div>
-  <div class="col-start-3">@if($project->project_end){{$project->project_end}} @else — @endif</div>
-  <div class="col-start-4">
-  @livewire('toggle',['model'=>$project, "field"=>'open'],key('tg'.$project->id))
+</div>
+<div x-data="{open : @entangle('projectOrClient')}">
+    <div x-show="open" class="grid grids-col-4 place-content-evenly text-blueline ">
+         @foreach($projects as $project)
+             <div class="col-start-1"><a href="{{route('project.show',['project'=> $project->id ] )}}">{{$project->project_title}}</a></div>
+             <div class="col-start-2">{{$project->project_start}}</div>
+             <div class="col-start-3">@if($project->project_end){{$project->project_end}} @else — @endif</div>
+             <div class="col-start-4">@livewire('toggle',['model'=>$project, "field"=>'open'],key('tg'.$project->id))</div>
+        @endforeach
     </div>
-@endforeach
+    <div x-show="!open" class="grid grids-col-4 place-content-evenly text-blueline ">
+       @foreach($allClients as $allClient)
+        <div class="col-start-1 p-3">{{$allClient->name}}</div>
+        <div class="col-start-2 p-3">{{$allClient->address_line1}}</div>
+        <div class="col-start-3 p-3">{{$allClient->phone}}@if($allClient->extension)<span> ext </span>{{$allClient->extension}}@endif</div>
+       @endforeach
+    </div>
+
 </div>
 </div>
 

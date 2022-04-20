@@ -96,17 +96,17 @@
        <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
            {{ __('dashboard') }}
        </x-responsive-nav-link>
-       <x-responsive-nav-link :href="route('list')" :active="request()->routeIs('list')">
-           {{ __('image list') }}
-       </x-responsive-nav-link>
-       <x-responsive-nav-link :href="route('addimage')" :active="request()->routeIs('addimage')">
-           {{ __('add image') }}
-        </x-responsive-nav-link>
         <x-responsive-nav-link :href="route('addimage')" :active="request()->routeIs('project/create')">
            {{_('new project')}}
         </x-responsive-nav-link>
-        <x-responsive-nav-link :href="route('manage')" :active="request()->routeIs('project/manage')">
+        <x-responsive-nav-link :href="route('project.create')" :active="request()->routeIs('project/manage')">
            {{_('manage')}}
+        </x-responsive-nav-link>
+        <x-responsive-nav-link :href="route('list')" :active="request()->routeIs('list')">
+               {{ __('image list') }}
+           </x-responsive-nav-link>
+        <x-responsive-nav-link :href="route('addimage')" :active="request()->routeIs('addimage')">
+           {{ __('add image') }}
         </x-responsive-nav-link>
         <x-responsive-nav-link :href="route('corvos')" :active="request()->routeIs('/')">
            {{_('home')}}
