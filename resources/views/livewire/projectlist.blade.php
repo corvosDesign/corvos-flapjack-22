@@ -10,10 +10,11 @@
 <div class="grid rounded bg-site-black p-2  hover:shadow">
 <h3 wire:click="allProjects" class="text-site-white cursor-pointer hover:text-gray-600">all projects</h3>
 </div>
-<div class="grid rounded bg-site-black p-2  hover:shadow">
+ @if(Auth::user()->hasAuth)
+<div class="grid rounded bg-site-black p-2 hover:shadow">
 <h3 wire:click="clients" class="text-site-white cursor-pointer hover:text-gray-600">clients</h3>
 </div>
-
+@endif
 </div>
 <div x-data="{open : @entangle('projectOrClient')}">
     <div x-show="open" class="grid grids-col-4 place-content-evenly text-blueline ">
@@ -26,7 +27,7 @@
     </div>
     <div x-show="!open" class="grid grids-col-4 place-content-evenly text-blueline ">
        @foreach($allClients as $allClient)
-        <div class="col-start-1 p-3">{{$allClient->name}}</div>
+        <div class="col-start-1 p-3"><a href="{{route('client.show',$allClient)}}">{{$allClient->name}}</a></div>
         <div class="col-start-2 p-3">{{$allClient->address_line1}}</div>
         <div class="col-start-3 p-3">{{$allClient->phone}}@if($allClient->extension)<span> ext </span>{{$allClient->extension}}@endif</div>
        @endforeach
