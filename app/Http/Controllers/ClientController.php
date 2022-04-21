@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreClientRequest;
 use App\Http\Requests\UpdateClientRequest;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Client;
 
 class ClientController extends Controller
@@ -47,7 +48,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return view('projects.client_detail', ["client"=>$client]);
     }
 
     /**

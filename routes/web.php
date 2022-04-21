@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StillController;
 use App\Http\Controllers\ProofController;
-
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +42,8 @@ Route::resource('stills', StillController::class)->only(['edit','update'])->midd
 
 Route::resource('project', ProjectController::class)->middleware(['auth']);
 Route::resource('proof', ProofController::class)->middleware(['auth']);
+Route::resource('client', ClientController::class)->middleware(['HasAuth']);
+
 
 Route::get('/projects/manage', function(){return view('projects.manage');})->middleware(['HasAuth'])->name('manage');
 Route::get('/dashboard', function () {
