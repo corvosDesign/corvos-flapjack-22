@@ -6,7 +6,9 @@
 
 
 <div class="col-start-1 text-blueline">
+<a href="{{route('project.show', $project)}}">
     <p class="">{{$project->project_title}}</p>
+</a>
 </div>
 <div class="col-start-2 text-blueline">
     <p class="">{{$project->project_start}}</p>
